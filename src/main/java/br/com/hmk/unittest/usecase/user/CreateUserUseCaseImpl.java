@@ -1,8 +1,8 @@
-package br.com.hkanno.unittest.usecase.user;
+package br.com.hmk.unittest.usecase.user;
 
-import br.com.hkanno.unittest.domain.User;
-import br.com.hkanno.unittest.exception.UserAlreadyExistsException;
-import br.com.hkanno.unittest.port.repository.UserRepository;
+import br.com.hmk.unittest.domain.User;
+import br.com.hmk.unittest.exception.UserAlreadyExistsException;
+import br.com.hmk.unittest.port.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -10,10 +10,10 @@ class CreateUserUseCaseImpl implements CreateUserUseCase {
 
     private final UserRepository userRepository;
 
-    public User process(String email, String password) {
+    public void process(String email, String password) {
 
         var persistedUser = userRepository.findByEmail(email);
-        if (persistedUser.isEmpty()) {
+        if (persistedUser.isPresent()) {
             throw new UserAlreadyExistsException();
         }
 
@@ -21,6 +21,6 @@ class CreateUserUseCaseImpl implements CreateUserUseCase {
                 .email(email)
                 .password(password)
                 .build();
-        return userRepository.save(user);
+        userRepository.save(user);
     }
 }

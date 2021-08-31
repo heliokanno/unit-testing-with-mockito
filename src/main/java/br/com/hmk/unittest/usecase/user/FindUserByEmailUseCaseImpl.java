@@ -1,9 +1,8 @@
-package br.com.hkanno.unittest.usecase.user;
+package br.com.hmk.unittest.usecase.user;
 
-import br.com.hkanno.unittest.domain.User;
-import br.com.hkanno.unittest.exception.UserNotFoundException;
-
-import br.com.hkanno.unittest.port.repository.UserRepository;
+import br.com.hmk.unittest.domain.User;
+import br.com.hmk.unittest.exception.UserNotFoundException;
+import br.com.hmk.unittest.port.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

@@ -1,6 +1,6 @@
-package br.com.hkanno.unittest.port.repository;
+package br.com.hmk.unittest.port.repository;
 
-import br.com.hkanno.unittest.domain.User;
+import br.com.hmk.unittest.domain.User;
 
 import java.util.Optional;
 

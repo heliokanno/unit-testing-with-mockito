@@ -1,4 +1,4 @@
-package br.com.hkanno.unittest.domain;
+package br.com.hmk.unittest.domain;
 
 import lombok.Builder;
 import lombok.Data;
